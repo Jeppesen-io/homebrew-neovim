@@ -1,7 +1,7 @@
 cask 'neovim' do
   version '0.4'
-  url 'https://github.com/Jeppesen-io/homebrew-bash/archive/master.zip'
-  homepage 'https://github.com/Jeppesen-io/homebrew-bash'
+  url 'https://github.com/Jeppesen-io/homebrew-neovim/archive/master.zip'
+  homepage 'https://github.com/Jeppesen-io/homebrew-neovim'
   sha256 :no_check
 
   require 'fileutils'
