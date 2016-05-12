@@ -7,6 +7,7 @@ cask 'neovim' do
   require 'fileutils'
   FileUtils::mkdir_p ENV['HOME'] + '/.config/nvim'
   FileUtils::mkdir_p ENV['HOME'] + '/.local/nvim'
+  FileUtils::mkdir_p ENV['HOME'] + '/.cache/nvim'
 
   depends_on formula: 'neovim/neovim/neovim'
   depends_on formula: 'wget'
