@@ -66,8 +66,8 @@ inoremap <silent><expr> <Tab>  pumvisible() ? "<C-n>" : "<Tab>"
 " Visual Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme stuff
-color summerfruit
-let g:airline_theme="light"
+"color summerfruit
+"let g:airline_theme="light"
 
 " Dont display welcome banner when opening without a fiel
 set shortmess=I

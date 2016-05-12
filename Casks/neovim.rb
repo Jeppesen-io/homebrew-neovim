@@ -1,5 +1,5 @@
 cask 'neovim' do
-  version '0.5'
+  version '0.6'
   url 'https://github.com/Jeppesen-io/homebrew-neovim/archive/master.zip'
   homepage 'https://github.com/Jeppesen-io/homebrew-neovim'
   sha256 :no_check
