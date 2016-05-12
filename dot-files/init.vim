@@ -66,7 +66,9 @@ inoremap <silent><expr> <Tab>  pumvisible() ? "<C-n>" : "<Tab>"
 " Visual Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme stuff
-"color summerfruit
+color gruvbox
+let g:gruvbox_contrast_light='soft'
+
 "let g:airline_theme="light"
 
 " Dont display welcome banner when opening without a fiel
