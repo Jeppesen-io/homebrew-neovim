@@ -1,6 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load All my plugins!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Enable true color
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 so ~/.config/nvim/plug.vim
 call plug#begin('~/.cache/nvim/plugged')
 
