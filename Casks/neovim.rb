@@ -12,7 +12,7 @@ cask 'neovim' do
   depends_on formula: 'wget'
   depends_on formula: 'python3'
 
-  artifact 'homebrew-neovom-master/dot-files/init.vim', target: "#{ENV['HOME']}/.config/nvim/init.vim"
+  artifact 'homebrew-neovim-master/dot-files/init.vim', target: "#{ENV['HOME']}/.config/nvim/init.vim"
 
 postflight do
 
