@@ -1,5 +1,5 @@
 cask 'neovim' do
-  version '0.3'
+  version '0.4'
   url 'https://github.com/Jeppesen-io/homebrew-bash/archive/master.zip'
   homepage 'https://github.com/Jeppesen-io/homebrew-bash'
   sha256 :no_check
@@ -12,7 +12,7 @@ cask 'neovim' do
   depends_on formula: 'wget'
   depends_on formula: 'python3'
 
-  artifact 'homebrew-neovom-master/dot-files', target: "#{ENV['HOME']}/.config/nvim"
+  artifact 'homebrew-neovom-master/dot-files/init.vim', target: "#{ENV['HOME']}/.config/nvim/init.vim"
 
 postflight do
 
