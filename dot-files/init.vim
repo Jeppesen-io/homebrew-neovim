@@ -9,8 +9,8 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
-  " Load many colorschemes and use plugin to cycle through them
-  Plug 'flazz/vim-colorschemes'
+  " Color
+  Plug 'morhetz/gruvbox'  " Truecolor neovim support
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-colorscheme-switcher'
 
