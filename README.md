@@ -14,3 +14,7 @@ Neovim, for me!
  * UpdatePlugins
  * SaveAndRun
  * CopyToClipboard (copy file to clipboard)
+
+
+
+![photo](img/screen_shot_01.png?raw=true)
