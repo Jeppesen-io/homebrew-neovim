@@ -1,5 +1,5 @@
 # homebrew-neovim
-### Wraps `neovim/neovim/neovim`` cask
+### Wraps `neovim/neovim/neovim` cask
 Neovim, for me!
 
 ### Features
