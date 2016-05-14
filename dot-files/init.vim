@@ -74,7 +74,7 @@ let g:gruvbox_contrast_light='soft'
 
 "let g:airline_theme="light"
 
-" Dont display welcome banner when opening without a fiel
+" Dont display welcome banner when opening without a file
 set shortmess=I
 
 " Enable powerline fonts
