@@ -10,24 +10,13 @@ call plug#begin('~/.cache/nvim/plugged')
   " A great vim statusline with themes and git support
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
 
   " Color
   Plug 'morhetz/gruvbox'  " Truecolor neovim support
-  Plug 'xolox/vim-misc'
-  Plug 'xolox/vim-colorscheme-switcher'
-
-  " Add github gits plugin to save notes to plus ctrlp plugin
-  Plug 'mattn/webapi-vim'
-  Plug 'mattn/gist-vim'
-  Plug 'mattn/ctrlp-gist'
 
   " Misc plugins
   Plug 'Shougo/deoplete.nvim'                   " Autocomplete
   Plug 'ntpeters/vim-better-whitespace'         " Highlight EOL whitespace
-  "Plug 'ctrlpvim/ctrlp.vim'                     " Fast fuzzy find
-  Plug 'junegunn/fzf'
-  Plug 'jalvesaq/vimcmdline'                    " Run code from buffer
 
 call plug#end()
 
@@ -43,11 +32,6 @@ command UpdatePlugins PlugUpgrade|PlugInstall|PlugUpdate|PlugClean|q|UpdateRemot
 command SaveAndRun w|!./%
 map <C-r> :SaveAndRun<CR>
 
-" Alwasy search $HOME with ctrp-p, but first must map ctrl-p to something else
-let g:ctrlp_map = '<c-a>'
-"map <C-p> :CtrlP ~<CR>
-map <C-p> :FZF<CR>
-
 " Set leader:
 map , <Leader>
 
@@ -57,11 +41,6 @@ command CopyToClipboard :%y+
 " Format JSON
 command FormatJson %!jq '.'
 
-" Colorscheme switcher
-map <F7> :PrevColorScheme<CR>
-map <F8> :RandomColorScheme<CR>
-map <F9> :NextColorScheme<CR>
-
 " Enable <Tab> complete on sugestions, otherwise work normaly
 inoremap <silent><expr> <Tab>  pumvisible() ? "<C-n>" : "<Tab>"
 
@@ -70,7 +49,7 @@ inoremap <silent><expr> <Tab>  pumvisible() ? "<C-n>" : "<Tab>"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme stuff
 color gruvbox
-let g:gruvbox_contrast_light='soft'
+let g:gruvbox_contrast_light='hard'
 
 "let g:airline_theme="light"
 
@@ -142,15 +121,6 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/vendor/*,Library*,Downloads,Applicat
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Write viminfo to XDG .cache
 set viminfo+=n~/.cache/nvim/viminfo
-
-" Write gist vim token to .local
-let gist_token_file='~/.local/nvim/gist-vim'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Post Gists as private by default
-let g:gist_post_private = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load local settings
