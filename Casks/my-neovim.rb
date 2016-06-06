@@ -1,4 +1,4 @@
-cask 'neovim' do
+cask 'my-neovim' do
   version '1.0'
   url 'https://github.com/Jeppesen-io/homebrew-neovim/archive/master.zip'
   homepage 'https://github.com/Jeppesen-io/homebrew-neovim'
