@@ -26,7 +26,7 @@ call plug#end()
 
 " Clean, update, upgrade and install vim plugins from github; I like to run
 " this on Mondays
-command UpdatePlugins PlugUpgrade|PlugInstall|PlugUpdate|PlugClean|q|UpdateRemotePlugins
+command UpdatePlugins PlugInstall|PlugUpgrade|PlugUpdate|PlugClean|q|UpdateRemotePlugins
 
 " Save document and run
 command SaveAndRun w|!./%
