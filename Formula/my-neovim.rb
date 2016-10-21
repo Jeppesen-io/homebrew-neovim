@@ -1,6 +1,6 @@
 class MyNeovim < Formula
-  desc 'Install NeoVim with my setup'
-  url 'https://github.com/Jeppesen-io/homebrew-macos/archive/master.zip'
+  desc 'Install Neovim how I like it'
+  url 'https://github.com/Jeppesen-io/homebrew-neovim/archive/master.zip'
   homepage 'https://github.com/Jeppesen-io/homebrew-neovim'
   version '0.5'
 
