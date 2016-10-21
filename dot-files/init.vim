@@ -1,32 +1,31 @@
+" Load plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Load All my plugins!
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Enable true color
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 so ~/.config/nvim/plug.vim
 call plug#begin('~/.cache/nvim/plugged')
 
-  " A great vim statusline with themes and git support
+  " Solarized for Vim
+  Plug 'iCyMind/NeoSolarized'
+
+  " Git plugin, used but airline
   Plug 'tpope/vim-fugitive'
+
+  " A great vim statusline with themes and git support
   Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
-  " Color
-  Plug 'morhetz/gruvbox'  " Truecolor neovim support
+  " Great async autocomplete
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-  " Misc plugins
-  Plug 'Shougo/deoplete.nvim'                   " Autocomplete
-  Plug 'ntpeters/vim-better-whitespace'         " Highlight EOL whitespace
+  " Highlight EOL whitespace
+  Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Clean, update, upgrade and install vim plugins from github; I like to run
 " this on Mondays
-command UpdatePlugins PlugInstall|PlugUpgrade|PlugUpdate|PlugClean|q|UpdateRemotePlugins
+command UpdatePlugins PlugUpgrade|PlugInstall|PlugUpdate|PlugClean|q|UpdateRemotePlugins
 
 " Save document and run
 command SaveAndRun w|!./%
@@ -38,48 +37,35 @@ map , <Leader>
 " Copy everything to the clipboard
 command CopyToClipboard :%y+
 
-" Format JSON
+" Send open file to jq for linting
 command FormatJson %!jq '.'
 
 " Enable <Tab> complete on sugestions, otherwise work normaly
 inoremap <silent><expr> <Tab>  pumvisible() ? "<C-n>" : "<Tab>"
 
+" Switch between light and dark background with <Leader>bg
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colorscheme stuff
-color gruvbox
-let g:gruvbox_contrast_light='hard'
+"Enable true color (as of NeoVim 0.1.5)
+set termguicolors
 
-"let g:airline_theme="light"
+" Dark is always the best
+set background=dark
+
+" Solarized, best with neovim
+colorscheme NeoSolarized
 
 " Dont display welcome banner when opening without a file
 set shortmess=I
 
 " Enable powerline fonts
-let g:airline_powerline_fonts = 1
-
-" Show hiddenchars
-set list
-
-" Set EOL to unicode newline and set space/tab stuff
-set listchars=tab:>-,trail:␣,extends:>,precedes:<
-
-" Syntax highlighting
-syntax enable
-
-" Set tabs/spaces to white/grey
-highlight SpecialKey ctermfg=2
+let g:airline_powerline_fonts=1
 
 " Display line numbers on the left
 set number
-
-" Display the cursor position on the last line of the screen or in the status
-" line of a window
-set ruler
-
-" Always display the status line, even if only one window is displayed
-set laststatus=2
 
 " Indentation settings for using 2 spaces instead of tabs.
 set shiftwidth=2
@@ -89,6 +75,16 @@ set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Movement and Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Force myself to not use arrow key
+"noremap <Up> <nop>
+"noremap <Down> <nop>
+"noremap <Left> <nop>
+"noremap <Right> <nop>
+
+" If you need to define a block in visual block mode with bounds outside the actual text
+set virtualedit=block
+
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
@@ -112,10 +108,6 @@ set clipboard=unnamed
 " Enable deoplete (neovim autocomplete)
 let g:deoplete#enable_at_startup = 1
 
-" Speed up ctrlp search. Remove git and vendor dirs and hiddend dirs
-let g:ctrlp_show_hidden = 0
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/vendor/*,Library*,Downloads,Applications,Music,Documents
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keep $home clean, use .local, .cache or .local for all files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,4 +117,4 @@ set viminfo+=n~/.cache/nvim/viminfo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load local settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-so ~/.local/nvim/*.vim
+" so ~/.local/nvim/*.vim
