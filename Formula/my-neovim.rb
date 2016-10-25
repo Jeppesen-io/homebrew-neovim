@@ -22,11 +22,11 @@ class MyNeovim < Formula
 
     # Copy over my configuration
     system 'cp', '-v', './dot-files/init.vim'	, "#{prefix}"
-    system 'ln', '-s', "#{prefix}/init.vim"	, "#{home_dir}/.config/nvim/init.vim"
+    system 'ln', '-svf', "#{prefix}/init.vim"	, "#{home_dir}/.config/nvim/init.vim"
 
     # Install vim-plug, a minimalist Vim plugin manager
     system 'curl', '-fLo', "#{prefix}/plug.vim", 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    system 'ln', '-s', "#{prefix}/plug.vim", "#{home_dir}/.config/nvim/plug.vim"
+    system 'ln', '-svf', "#{prefix}/plug.vim", "#{home_dir}/.config/nvim/plug.vim"
 
     # Link nvim to vim
     system 'ln', '-svf', '/usr/local/bin/nvim', '/usr/local/bin/vim'
