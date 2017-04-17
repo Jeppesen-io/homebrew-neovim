@@ -1,3 +1,6 @@
+" Set leader:
+map , <Leader>
+
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clean, update, upgrade and install vim plugins from github; I like to run
@@ -7,21 +10,12 @@ command UpdatePlugins PlugUpgrade|PlugInstall|PlugUpdate|PlugClean|q|UpdateRemot
 " Save document and run
 command SaveAndRun w|!./%
 map <C-r> :SaveAndRun<CR>
-
-" Set leader:
-map , <Leader>
-
 " Copy everything to the clipboard
+"
 command CopyToClipboard :%y+
 
 " Send open file to jq for linting
 command FormatJson %!jq '.'
-
-" Enable <Tab> complete on sugestions, otherwise work normaly
-inoremap <silent><expr> <Tab>  pumvisible() ? "<C-n>" : "<Tab>"
-
-" Switch between light and dark background with <Leader>bg
-map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual Settings
@@ -37,8 +31,6 @@ set shortmess=I
 
 " Enable powerline fonts
 colorscheme slate
-let g:airline_theme='papercolor'
-let g:airline_powerline_fonts=1
 
 " Display line numbers on the left
 set number
@@ -51,12 +43,6 @@ set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Movement and Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Force myself to not use arrow key
-"noremap <Up> <nop>
-"noremap <Down> <nop>
-"noremap <Left> <nop>
-"noremap <Right> <nop>
 
 " If you need to define a block in visual block mode with bounds outside the actual text
 set virtualedit=block
@@ -81,16 +67,9 @@ set nostartofline
 set mouse=a
 set clipboard=unnamed
 
-" Enable deoplete (neovim autocomplete)
-let g:deoplete#enable_at_startup = 1
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keep $home clean, use .local, .cache or .local for all files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Write viminfo to XDG .cache
 set viminfo+=n~/.cache/nvim/viminfo
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Load local settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" so ~/.local/nvim/*.vim

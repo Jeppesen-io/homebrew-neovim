@@ -3,8 +3,9 @@
 so ~/.config/nvim/plug.vim
 call plug#begin('~/.cache/nvim/plugged')
 
-  " Load plugins
-  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " All *MY* settings
+  Plug 'jeppesen-io/homebrew-neovim'
+
   " Git plugin, used but airline
   Plug 'tpope/vim-fugitive'
 
@@ -17,9 +18,6 @@ call plug#begin('~/.cache/nvim/plugged')
 
   " Highlight EOL whitespace
   Plug 'ntpeters/vim-better-whitespace'
-
-  " After all, that configure it up
-  Plug 'jeppesen-io/homebrew-neovim'
 
 call plug#end()
 
