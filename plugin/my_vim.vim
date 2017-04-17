@@ -5,17 +5,17 @@ map , <Leader>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clean, update, upgrade and install vim plugins from github; I like to run
 " this on Mondays
-command UpdatePlugins PlugUpgrade|PlugInstall|PlugUpdate|PlugClean|q|UpdateRemotePlugins
+command UpdatePlugins PlugUpgrade|PlugInstall|PlugUpdate|PlugClean|q|UpdateRemotePlugins!
 
 " Save document and run
-command SaveAndRun w|!./%
+command SaveAndRun w|!./%!
 map <C-r> :SaveAndRun<CR>
 " Copy everything to the clipboard
 "
-command CopyToClipboard :%y+
+command CopyToClipboard :%y+!
 
 " Send open file to jq for linting
-command FormatJson %!jq '.'
+command FormatJson %!jq '.'!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual Settings
