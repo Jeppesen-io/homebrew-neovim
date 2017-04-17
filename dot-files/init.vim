@@ -18,8 +18,8 @@ call plug#begin('~/.cache/nvim/plugged')
   " Highlight EOL whitespace
   Plug 'ntpeters/vim-better-whitespace'
 
-call plug#end()
-
   " After all, that configure it up
-Plug 'jeppesen-io/homebrew-neovim'
+  Plug 'jeppesen-io/homebrew-neovim'
+
+call plug#end()
 
