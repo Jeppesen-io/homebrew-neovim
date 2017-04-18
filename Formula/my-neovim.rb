@@ -2,11 +2,12 @@ class MyNeovim < Formula
   desc 'Install Neovim how I like it'
   url 'https://github.com/Jeppesen-io/homebrew-neovim/archive/master.zip'
   homepage 'https://github.com/Jeppesen-io/homebrew-neovim'
-  version '1.2'
+  version '1.3'
 
   depends_on 'neovim/neovim/neovim'
   depends_on 'curl'
   depends_on 'python3'
+  depends_on 'jsonlint' # Used by syntastic
 
   bottle :unneeded
 
@@ -33,6 +34,9 @@ class MyNeovim < Formula
 
     # Install latest neovom python3 bindings for deoplete plugin
     system 'pip3', 'install', 'neovim', '--upgrade'
+
+    # Used by syntastic
+    system 'pip3', 'install', 'yamllint', '--upgrade'
 
   end
 
