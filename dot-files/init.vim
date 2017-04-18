@@ -6,6 +6,9 @@ call plug#begin('~/.cache/nvim/plugged')
   " All *MY* settings
   Plug 'jeppesen-io/homebrew-neovim'
 
+  " Syntax checking
+  Plug 'vim-syntastic/syntastic'
+
   " Git plugin, used but airline
   Plug 'tpope/vim-fugitive'
 
