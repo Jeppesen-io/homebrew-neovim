@@ -14,8 +14,9 @@ map <C-r> :SaveAndRun<CR>
 "
 command! CopyToClipboard :%y+
 
-" Send open file to jq for linting
-command! FormatJson %!jq '.'
+" Lint!
+command! LintJson %!jq '.'
+command! LintYaml %!yq '.'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual Settings
