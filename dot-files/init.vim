@@ -22,6 +22,7 @@ call plug#begin('~/.cache/nvim/plugged')
   " Highlight EOL whitespace
   Plug 'ntpeters/vim-better-whitespace'
 
+  Plug 'xolox/misc'
   Plug 'xolox/vim-notes'
 
 call plug#end()
