@@ -6,9 +6,6 @@ call plug#begin('~/.cache/nvim/plugged')
   " All *MY* settings
   Plug 'jeppesen-io/homebrew-neovim'
 
-  " Syntax checking
-  Plug 'vim-syntastic/syntastic'
-
   " Git plugin, used but airline
   Plug 'tpope/vim-fugitive'
 
@@ -21,9 +18,6 @@ call plug#begin('~/.cache/nvim/plugged')
 
   " Highlight EOL whitespace
   Plug 'ntpeters/vim-better-whitespace'
-
-  Plug 'xolox/vim-misc'
-  Plug 'xolox/vim-notes'
 
 call plug#end()
 
