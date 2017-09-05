@@ -1,6 +1,13 @@
 " Load my profile from github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-so ~/.config/nvim/plug.vim
+
+" Download vim.plug if missing
+if empty(glob('~/.cache/nvim/plug.vim'))
+  echo "Oh dear! vim plug is missing! Lets download it."
+  silent !curl --create-dirs -fLo ~/.cache/nvim/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+so ~/.cache/nvim/plug.vim
 call plug#begin('~/.cache/nvim/plugged')
 
   " All *MY* settings
