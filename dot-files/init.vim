@@ -3,8 +3,9 @@
 
 " Download vim.plug if missing
 if empty(glob('~/.cache/nvim/plug.vim'))
-  echo "Oh dear! vim plug is missing! Lets download it."
+  echo 'vim-plug is missing. Downloading...'
   silent !curl --create-dirs -fLo ~/.cache/nvim/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  echo 'vim-plug downloaded. Run :PlugInstall to install plugins'
 endif
 
 so ~/.cache/nvim/plug.vim
@@ -27,4 +28,4 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
-
+:
